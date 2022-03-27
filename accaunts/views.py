@@ -37,7 +37,7 @@ def sign_in(request):
 
 def logout_user(request):
     logout(request)
-    return HttpResponse('Вы успещно вошли!')
+    return HttpResponse('Вы успещно вышли!')
 
 def register(request):
     if request.method == 'POST':
