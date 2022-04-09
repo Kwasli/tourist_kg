@@ -16,3 +16,7 @@ class PostAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'id']
     prepopulate_fields = {'slug':('name',)}
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['comment']

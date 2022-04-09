@@ -1,4 +1,5 @@
-from turtle import width
+from pyexpat import model
+from post.models import Comment, Contact
 from django import forms
 
 
@@ -7,6 +8,20 @@ from django import forms
 #1) Form - Обычная форма
 
 
-class LoginForm(forms.Form):
-    username = forms.CharField()
-    login = forms.CarField(widget = forms.PasswordInput)
+class CommentForm(forms.Form):
+    class Meta:
+        model = Comment
+        fields = ['comment']
+
+        widgets = {
+            'comment':forms.TextInput(attrs ={
+                'class':"form-control"
+            })
+        }
+
+
+
+class ContactForm(forms.Form):
+    class Meta:
+        model = Contact
+        fields = ['nomer']
